@@ -7,14 +7,14 @@ app.controller("myCtrl", function($scope) {
 
 app.factory('CategorySimple', ['$resource',
     function($resource){
-        //vitaliy-ryepnoy/ng_chained_selects/option.php?id=0
+        //http://ng-chained-selects.appspot.com/option.php?id=0
         return $resource( 'data-level1.json', {}, {
             query: {method:'GET', isArray: false}
         });
     }]);
 app.factory('CategoryTree', ['$resource',
     function($resource){
-        //vitaliy-ryepnoy/ng_chained_selects/option.php?mode=tree&id=20
+        //http://ng-chained-selects.appspot.com/option.php?mode=tree&id=20
         return $resource( 'data-tree.json', {}, {
             query: {method:'GET', isArray: false}
         });
