@@ -14,7 +14,7 @@ function fillOptions(&$id, $level, $maxLevel)
 {
   $max = rand(1, 9);
   $result = array();
-  for ($i=1;$i<=$max;$i++) {
+  for ($i=0;$i<=$max;$i++) {
     $option = array();
     $option['id'] = $id++;
     $option['name'] = 'Level ' . $level . ' Option ' . $i;

@@ -20,10 +20,12 @@ if (isset($_REQUEST['mode'])) {
     ksort($tree);
     $result = array();
     $target = $allOptions;
-    for ($i=1; $i<count($tree); $i++) {
-        $result[$i] = returnLevelOptions($target);
-        $target = $target[$tree[$i]]['options'];
-        $result[$i]['selected'] = $result[$i][$tree[$i]];
+    for ($i=1; $i<=count($tree); $i++) {
+        $result[$i]['options'] = returnLevelOptions($target);
+        $result[$i]['selected'] = $result[$i]['options'][$tree[$i]];
+        if ($i<count($tree))
+            $target = $target[$tree[$i]]['options'];
+
     }
 
     die (json_encode($result));
@@ -54,7 +56,7 @@ if (isset($_REQUEST['id']))
 function returnLevelOptions($options)
 {
     $result = array();
-    foreach ($options as $v)
+    foreach ($options as $k=>$v)
     {
         $row = $v;
         unset($row['options']);
@@ -78,7 +80,7 @@ function findById($id, $options, $level, &$tree)
             if (!$v['final'])
             {
                 $found = findById($id, $v['options'], $level + 1, $tree);
-                if ($found)
+                if ($found !== false)
                 {
                     $tree[$level] = $k;
                     return $found;
