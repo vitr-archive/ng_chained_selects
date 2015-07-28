@@ -18,4 +18,5 @@ option tree sample
 ![Image](./option-tree.png?raw=true)
 
 
-TODO: add interfaces for the tree and options services
+TODO: bower package (javascript)        
+TODO: add interfaces for the tree and options services(php)
