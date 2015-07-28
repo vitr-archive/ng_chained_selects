@@ -1,0 +1,8 @@
+application: ng-chained-selects
+version: 1
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /.*
+  script: helloworld.php
