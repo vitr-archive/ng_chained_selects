@@ -13,11 +13,12 @@
 
 <h1 class="title">Chained Select Boxes</h1>
 
+<br ng-init="init.option.id = 74">
 
 <ng-chained-selects
-        option-service="CategorySimple"
-        tree-service="CategoryTree"
-        init-id="product.categoryid"
+        option-service="OptionList"
+        tree-service="OptionTree"
+        init-id="init.option.id"
         element-label="Current Category 1"
         element-first-option="Please select category..."
         ></ng-chained-selects>

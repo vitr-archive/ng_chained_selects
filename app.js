@@ -5,14 +5,14 @@ app.controller("myCtrl", function($scope) {
     $scope.categoryTree = [];
 });
 
-app.factory('CategorySimple', ['$resource',
+app.factory('OptionList', ['$resource',
     function($resource){
         //http://ng-chained-selects.appspot.com/option.php?id=0
         return $resource( 'data-level1.json', {}, {
             query: {method:'GET', isArray: false}
         });
     }]);
-app.factory('CategoryTree', ['$resource',
+app.factory('OptionTree', ['$resource',
     function($resource){
         //http://ng-chained-selects.appspot.com/option.php?mode=tree&id=20
         return $resource( 'data-tree.json', {}, {
