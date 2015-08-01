@@ -8,15 +8,15 @@ app.controller("myCtrl", function($scope) {
 app.factory('OptionList', ['$resource',
     function($resource){
         //http://ng-chained-selects.appspot.com/option.php?id=0
-        return $resource( 'data-level1.json', {}, {
-            query: {method:'GET', isArray: false}
+        return $resource( 'google-app-engine/option.php?id=:optionId', {}, {
+            query: {method:'GET', params:{optionId:'@optionId'}, isArray: true}
         });
     }]);
 app.factory('OptionTree', ['$resource',
     function($resource){
         //http://ng-chained-selects.appspot.com/option.php?mode=tree&id=20
-        return $resource( 'data-tree.json', {}, {
-            query: {method:'GET', isArray: false}
+        return $resource( 'google-app-engine/option.php?mode=tree&id=:optionId', {}, {
+            query: {method:'GET', params:{optionId:'@optionId'}, isArray: false}
         });
     }])
 
@@ -42,7 +42,7 @@ app.directive('ngChainedSelects', function($injector) {
           level = parseInt(level);
           scope.elementTree.splice(level+1, scope.elementTree.length - level);
           if (!scope.elementTree[level].selected.final) {
-            scope.optionService.query({categoryId: scope.elementTree[level].selected.id}, function (data){
+            scope.optionService.query({optionId: scope.elementTree[level].selected.id}, function (data){
               scope.elementTree[level+1] = {};
               scope.elementTree[level+1].options = {};
               for (var i in data) {
@@ -66,18 +66,20 @@ app.directive('ngChainedSelects', function($injector) {
 
 
 
-        scope.treeService.query({categoryId: scope.initId}, function(data) {
+        scope.treeService.query({optionId: scope.initId}, function(data) {
           for (var i in data) {
             if (!data.hasOwnProperty(i))
               continue;
             i = parseInt(i);
+              console.log(i);
             if (i) {
               scope.elementTree.push(data[i]);
             }
           }
+            console.log(scope.elementTree);
         });
       },
 
-      templateUrl: 'app/directive_templates/ng-chained-selects.html'
+      templateUrl: 'ng-chained-selects.html'
     }
 });
