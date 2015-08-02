@@ -3,8 +3,9 @@
  * Returns options for a select box
  */
 
-echo "started!!!!";
 header("Access-Control-Allow-Origin: *");
+
+echo "started!!!!";
 
 $allOptions = json_decode(file_get_contents('http://ng-chained-selects.appspot.com/options.json'), true);
 

@@ -1,5 +1,5 @@
 application: ng-chained-selects
-version: 004
+version: 005
 runtime: php55
 api_version: 1
 
