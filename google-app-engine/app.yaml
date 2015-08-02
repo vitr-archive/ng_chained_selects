@@ -1,8 +1,12 @@
 application: ng-chained-selects
-version: 1
+version: 003
 runtime: php55
 api_version: 1
 
 handlers:
+- url: /data
+  static_dir: data
+- url: /helloworld.php
+  script: helloworld.php
 - url: /.*
   script: options.php

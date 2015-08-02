@@ -3,9 +3,10 @@
  * Returns options for a select box
  */
 
+echo "started!!!!";
 header("Access-Control-Allow-Origin: *");
 
-$allOptions = json_decode(file_get_contents('options.json'), true);
+$allOptions = json_decode(file_get_contents('http://ng-chained-selects.appspot.com/options.json'), true);
 
 $result = array();
 // option.php?mode=tree&id=20
