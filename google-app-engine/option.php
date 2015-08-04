@@ -46,7 +46,7 @@ if (isset($_REQUEST['id']))
     findById($_REQUEST['id'], $allOptions, 1, $tree);
     ksort($tree);
     $target = $allOptions;
-    for ($i=1; $i<count($tree); $i++) {
+    for ($i=1; $i<=count($tree); $i++) {
         $target = $target[$tree[$i]]['options'];
     }
     $result = returnLevelOptions($target);
