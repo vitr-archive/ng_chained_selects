@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Chained Select Boxes</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-resource.js"></script>
+</head>
+<body ng-cloak>
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<h1 class="title">Chained Select Boxes</h1>
+
+<br ng-init="init.option.id = 74">
+
+<ng-chained-selects
+        option-service="OptionList"
+        tree-service="OptionTree"
+        init-id="init.option.id"
+        element-label="Current Category 1"
+        element-first-option="Please select category..."
+        ></ng-chained-selects>
+
+<hr/>
+
+
+<!-- COOL TEST (REALLY)
+<br ng-init="product.categorytest = 74">
+
+<ng-chained-selects
+  option-service="CategorySimpleTest"
+  tree-service="CategoryTreeTest"
+  init-id="product.categorytest"
+  element-label="Test Category"
+  element-first-option="Please select category..."
+></ng-chained-selects>
+-->
+
+
+<script src="app.js"></script>
+</body>
+</html>
