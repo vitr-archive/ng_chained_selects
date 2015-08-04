@@ -1,0 +1,32 @@
+{{ elementLabel }} :
+
+<span ng-repeat="element in elementTree track by $index">
+  {{  element.selected.name }}
+  <span ng-if="!$last"> > </span>
+</span>
+
+<br />
+
+<span ng-repeat="(level, select) in elementTree">
+  <select
+          ng-model="select.selected"
+          ng-options="item.name for item in select.options track by item.id"
+          ng-change="update(level)"
+          >
+      <option value="">{{ elementFirstOption }}</option>
+  </select>
+</span>
+
+<!--
+
+<span ng-repeat="(level, select) in elementTree">
+  <select
+          ng-disabled="!select.categories.length"
+          ng-model="elementSelected[level]"
+          ng-options="obj.name for obj in elementOptions[level] track by obj.id"
+          ng-change="update(level)"
+          >
+      <option value="">{{ elementFirstOption }}</option>
+  </select>
+</span>
+-->
