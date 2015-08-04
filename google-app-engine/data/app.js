@@ -80,6 +80,6 @@ app.directive('ngChainedSelects', function($injector) {
         });
       },
 
-      templateUrl: 'ng-chained-selects.html'
+      templateUrl: 'data/ng-chained-selects.html'
     }
 });
