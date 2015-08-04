@@ -18,7 +18,7 @@ option tree sample
 ![Image](./option-tree.png?raw=true)
 
 ####Note
-2 ajax call are involved:  
+2 ajax calls are involved:  
 - initial tree returns an object with options array on each level (1, 2, 3, etc.)  
 - options list returns an array of options which are the children(leaves) of the parent option
 
