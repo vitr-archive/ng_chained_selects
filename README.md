@@ -2,6 +2,10 @@
 AngularJS implementation of chained select boxes with ajax calls for data   
 let's make it as a custom directive 
    
+fully functional demo  
+http://ng-chained-selects.appspot.com/index.html  
+   
+   
 base angular application  
 https://github.com/Swiip/generator-gulp-angular
 
