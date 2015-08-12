@@ -26,7 +26,8 @@ option tree sample
 - initial tree returns an object with options array on each level (1, 2, 3, etc.)  
 - options list returns an array of options which are the children(leaves) of the parent option
 
-
+initId - initial value of the select box chain, it also determines how many select boxes in the chain. Also picked value is
+bound to the variable provided as initId.
 
 TODO: bower package (javascript)        
 TODO: add interfaces for the tree and options services(php)
