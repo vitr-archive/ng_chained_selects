@@ -7,8 +7,8 @@ http://ng-chained-selects.appspot.com/index.html
    
    
 base angular application  
-https://github.com/Swiip/generator-gulp-angular
-
+https://github.com/Swiip/generator-gulp-angular  
+(plain app is currently used)
 
 php back-end to support ajax requests
 
